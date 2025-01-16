@@ -1,5 +1,7 @@
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   return (
@@ -35,7 +37,17 @@ const Projects = () => {
               transition={{ duration: 1 }}
               className="w-full maxwxl lg:w-3/4"
             >
-              <h6 className="mb-2 font-semibold">{project.title}</h6>
+              <h6 className="mb-2 font-semibold">
+                {project.title}{" "}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+              </h6>
+
               <p className="mb-4 text-neutral-400">{project.description}</p>
               {project.technologies.map((technology, index) => (
                 <span
